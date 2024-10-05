@@ -1,6 +1,7 @@
 ﻿using Prism.Commands;
 using Prism.Mvvm;
 using System;
+using System.Windows;
 using UsingCompositeCommands.Core;
 
 namespace ModuleA.ViewModels
@@ -31,19 +32,28 @@ namespace ModuleA.ViewModels
         }
 
         public DelegateCommand UpdateCommand { get; private set; }
+        public DelegateCommand ShowCommand { get; private set; }
 
         public TabViewModel(IApplicationCommands applicationCommands)
         {
             _applicationCommands = applicationCommands;
 
             UpdateCommand = new DelegateCommand(Update).ObservesCanExecute(() => CanUpdate);
+            ShowCommand = new DelegateCommand(Show).ObservesCanExecute(() => CanUpdate);
 
             _applicationCommands.SaveCommand.RegisterCommand(UpdateCommand);
+            _applicationCommands.SaveCommand.RegisterCommand(ShowCommand);
+
+        }
+
+        private void Show()
+        {
+            UpdateText += "ShowCommand";
         }
 
         private void Update()
         {
             UpdateText = $"Updated: {DateTime.Now}";
-        }       
+        }
     }
 }

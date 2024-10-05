@@ -20,8 +20,8 @@ namespace UsingCompositeCommands.ViewModels
         }
 
         public MainWindowViewModel(IApplicationCommands applicationCommands)
-        {
-            ApplicationCommands = applicationCommands;
+        {        
+            _applicationCommands = applicationCommands;
         }
     }
 }

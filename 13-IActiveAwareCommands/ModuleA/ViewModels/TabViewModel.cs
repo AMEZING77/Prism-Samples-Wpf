@@ -61,7 +61,7 @@ namespace ModuleA.ViewModels
         private void OnIsActiveChanged()
         {
             UpdateCommand.IsActive = IsActive;
-
+            //仅仅是在ViewModel中增加了一个IActiveAware，这决定了只有在Acitve状态的视图中才会执行自己ViewModel中的命令。
             IsActiveChanged?.Invoke(this, new EventArgs());
         }
 

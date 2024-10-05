@@ -13,6 +13,7 @@ namespace UsingDelegateCommands.ViewModels
             set
             {
                 SetProperty(ref _isEnabled, value);
+                //new DelegateCommand(Execute, CanExecute);这种方式定义的Command需要手动关联属性值变化
                 ExecuteDelegateCommand.RaiseCanExecuteChanged();
             }
         }
