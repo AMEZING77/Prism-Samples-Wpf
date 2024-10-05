@@ -23,6 +23,7 @@ namespace ViewModelLocator
             
         }
 
+        //如果不按照Prism指定的View\ViewModel文件夹格式，就需要手动指定View和ViewModel之间的关联
         protected override void ConfigureViewModelLocator()
         {
             base.ConfigureViewModelLocator();
