@@ -25,6 +25,16 @@ namespace Regions
                 }
 
                 //handle remove
+
+                if (e.Action == System.Collections.Specialized.NotifyCollectionChangedAction.Remove)
+                {
+                    foreach (FrameworkElement element in e.NewItems)
+                    {
+                        if (!regionTarget.Children.Contains(element)) continue;
+                        regionTarget.Children.Remove(element);
+                    }
+                }
+
             };
         }
 

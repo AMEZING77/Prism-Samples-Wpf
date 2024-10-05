@@ -1,9 +1,10 @@
 ﻿using Prism.Ioc;
 using Prism.Navigation.Regions;
 using Prism.Unity;
-using Regions.Views;
 using System.Windows;
 using System.Windows.Controls;
+using Regions;
+using Regions.Views;
 
 namespace Regions
 {
@@ -26,6 +27,9 @@ namespace Regions
         {
             base.ConfigureRegionAdapterMappings(regionAdapterMappings);
             regionAdapterMappings.RegisterMapping(typeof(StackPanel), Container.Resolve<StackPanelRegionAdapter>());
+            regionAdapterMappings.RegisterMapping(typeof(TextBlock), Container.Resolve<TextBlockRegionAdapter>());
+
+
         }
     }
 }

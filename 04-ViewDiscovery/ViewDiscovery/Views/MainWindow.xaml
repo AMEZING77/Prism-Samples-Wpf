@@ -3,7 +3,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:prism="http://prismlibrary.com/"
         Title="Shell" Height="350" Width="525">
-    <Grid>
-        <ContentControl prism:RegionManager.RegionName="ContentRegion" />
-    </Grid>
+    <StackPanel>
+        <ContentControl prism:RegionManager.RegionName="ViewA" />
+        <ContentControl prism:RegionManager.RegionName="ViewB" />
+    </StackPanel>
 </Window>
