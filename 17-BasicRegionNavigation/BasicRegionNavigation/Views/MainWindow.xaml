@@ -9,6 +9,7 @@
             <Button Command="{Binding NavigateCommand}" CommandParameter="ViewA" Margin="5">Navigate to View A</Button>
             <Button Command="{Binding NavigateCommand}" CommandParameter="ViewB" Margin="5">Navigate to View B</Button>
         </StackPanel>
-        <ContentControl prism:RegionManager.RegionName="ContentRegion" Margin="5"  />
+        <ContentControl prism:RegionManager.RegionName="ContentRegionA" Margin="5"  />
+        <ContentControl prism:RegionManager.RegionName="ContentRegionB" Margin="5"  />
     </DockPanel>
 </Window>

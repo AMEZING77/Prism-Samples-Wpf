@@ -26,8 +26,10 @@ namespace BasicRegionNavigation.ViewModels
 
         private void Navigate(string navigatePath)
         {
-            if (navigatePath != null)
-                _regionManager.RequestNavigate("ContentRegion", navigatePath);
+            if (navigatePath == null) return;
+            if (navigatePath.Contains("A")) _regionManager.RequestNavigate("ContentRegionA", navigatePath);
+            if (navigatePath.Contains("B")) _regionManager.RequestNavigate("ContentRegionB", navigatePath);
+
         }
     }
 }

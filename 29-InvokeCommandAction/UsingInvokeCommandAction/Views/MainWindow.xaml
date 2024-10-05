@@ -23,7 +23,7 @@
 
         <ListBox Grid.Row="1" Margin="5" ItemsSource="{Binding Items}" SelectionMode="Single">
             <i:Interaction.Triggers>
-                <!-- This event trigger will execute the action when the corresponding event is raised by the ListBox. -->
+                <!-- This event trigger will execute the action when the corresponding event is raised by the ListBox. 定制事件名不可更改 -->
                 <i:EventTrigger EventName="SelectionChanged">
                     <!-- This action will invoke the selected command in the view model and pass the parameters of the event to it. -->
                     <prism:InvokeCommandAction Command="{Binding SelectedCommand}" TriggerParameterPath="AddedItems" />
